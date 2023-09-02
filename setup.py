@@ -40,7 +40,7 @@ setup(
     include_package_data=True,
     python_requires=">=3.11",
     install_requires=[
-        "Django==4.2",
+        "Django==4.2.4",
         "django-meta==2.3.0",
     ],
 )
