@@ -46,8 +46,15 @@ Quick start
 
     ``` python
         from cms.pages.api.views import FlatPageViewSet
+        from cms.ui.api.views import ThemeAPIView, TemplateAPIView
+        from django.urls import path
 
-        router.register("pages", GrapejsViewSet)
+        router.register("pages", FlatPageViewSet)
+
+        urlpatterns += [
+            path("themes/", ThemeAPIView.as_view(), name="themes"),
+            path("templates/<int:pk>/", TemplateAPIView.as_view(), name="templates"),
+        ]
     ```
 
 
