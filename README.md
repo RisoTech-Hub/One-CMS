@@ -40,6 +40,17 @@ Quick start
         </html>
     ```
 
+3. Run `python manage.py migrate` to create the cms models.
+
+4. Add the following to your project's apt_router.py file::
+
+    ``` python
+        from cms.pages.api.views import FlatPageViewSet
+
+        router.register("pages", GrapejsViewSet)
+    ```
+
+
 How to contribute
 =================
 
