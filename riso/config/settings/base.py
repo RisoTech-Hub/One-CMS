@@ -66,9 +66,10 @@ DJANGO_APPS = [
     "django.contrib.sites",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # "django.contrib.humanize", # Handy template tags
+    "django.contrib.humanize",  # Handy template tags
     "django.contrib.admin",
     "django.forms",
+    "django.contrib.flatpages",
 ]
 THIRD_PARTY_APPS = [
     "crispy_forms",
@@ -82,6 +83,8 @@ THIRD_PARTY_APPS = [
     "corsheaders",
     "drf_spectacular",
     "meta",
+    "cms",
+    "cms.pages",
 ]
 
 LOCAL_APPS = [
