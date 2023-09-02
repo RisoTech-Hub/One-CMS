@@ -1,9 +1,10 @@
-{% load static i18n %}
+{% load static i18n meta %}
 
 <!DOCTYPE html>
 {% get_current_language as LANGUAGE_CODE %}
-<html lang="{{ LANGUAGE_CODE }}">
+<html lang="{{ LANGUAGE_CODE }}" {% meta_namespaces %}>
   <head>
+    {% include "meta/meta.html" %}
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>
