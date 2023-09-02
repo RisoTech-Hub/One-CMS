@@ -57,6 +57,23 @@ Quick start
         ]
     ```
 
+5. Add the following to your project's urls.py file::
+
+    ``` python
+        from django.urls import include, path
+        from cms.pages import views as flatpage_views
+
+        urlpatterns = [
+            # Always include the include on top of urlpatterns
+            path("", flatpage_views.flatpage, {"url": "/"}, name="home"),
+        ]
+
+        # Always include flatpages before the catch-all
+        if "django.contrib.flatpages" in settings.INSTALLED_APPS:
+            urlpatterns += [
+                path("<path:url>", flatpage_views.flatpage, name="django.contrib.flatpages.views.flatpage"),
+            ]
+    ```
 
 How to contribute
 =================
