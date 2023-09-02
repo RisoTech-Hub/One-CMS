@@ -41,5 +41,6 @@ setup(
     python_requires=">=3.11",
     install_requires=[
         "Django==4.2",
+        "django-meta==2.3.0",
     ],
 )

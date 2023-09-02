@@ -12,11 +12,29 @@ Quick start
 
 1. Add "cms" to your INSTALLED_APPS setting like this::
 
-   ``` python
+    ``` python
+        THIRD_PARTY_APPS = [
+           ...,
+            "meta",
+        ]
+
         INSTALLED_APPS = [
             ...,
             "cms",
         ]
+    ```
+
+2. Include meta/meta.html template in your templates
+
+    ``` jinja2
+        {% load meta %}
+        <html>
+        <head {% meta_namespaces %}>
+            {% include "meta/meta.html" %}
+        </head>
+        <body>
+        </body>
+        </html>
     ```
 
 How to contribute
