@@ -85,6 +85,7 @@ THIRD_PARTY_APPS = [
     "meta",
     "cms",
     "cms.pages",
+    "cms.ui",
 ]
 
 LOCAL_APPS = [
