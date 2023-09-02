@@ -4,7 +4,7 @@ from django.apps import AppConfig
 class CmsUIConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
     name = "cms.ui"
-    verbose_name = "CMS"
+    verbose_name = "CMS UI"
 
     def ready(self):
         try:
