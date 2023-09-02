@@ -12,7 +12,12 @@ Quick start
 
 1. Add "cms" to your INSTALLED_APPS setting like this::
 
-   ``` python
+    ``` python
+        THIRD_PARTY_APPS = [
+           ...,
+            "meta",
+        ]
+
         INSTALLED_APPS = [
             ...,
             "cms",
