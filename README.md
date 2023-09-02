@@ -13,15 +13,18 @@ Quick start
 1. Add "cms" to your INSTALLED_APPS setting like this::
 
     ``` python
+        DJANGO_APPS = [
+            ...,
+            "django.contrib.flatpages",
+        ]
+
         THIRD_PARTY_APPS = [
            ...,
             "meta",
+            "cms",
+            "cms.pages",
         ]
 
-        INSTALLED_APPS = [
-            ...,
-            "cms",
-        ]
     ```
 
 2. Include meta/meta.html template in your templates
