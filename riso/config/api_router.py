@@ -1,3 +1,4 @@
+from cms.pages.api.views import FlatPageViewSet
 from django.conf import settings
 from rest_framework.routers import DefaultRouter, SimpleRouter
 
@@ -9,6 +10,7 @@ else:
     router = SimpleRouter()
 
 router.register("users", UserViewSet)
+router.register("pages", FlatPageViewSet)
 
 
 app_name = "api"
