@@ -6,6 +6,7 @@ class Theme(Model):
     name = CharField(_("Theme name"), max_length=255, unique=True)
     description = CharField(_("Description"), max_length=255, blank=True, null=True)
     thumbnail = ImageField(_("Thumbnail"), upload_to="themes", blank=True, null=True)
+    template_name = CharField(_("Render Template name"), max_length=255, blank=True, null=True)
 
     class Meta:
         verbose_name = _("Theme")

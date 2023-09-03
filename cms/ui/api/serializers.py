@@ -1,23 +1,23 @@
-from rest_framework import serializers
+from rest_framework.serializers import ModelSerializer
 
 from ..models import Template, Theme
 
 
-class TemplateSerializer(serializers.ModelSerializer[Template]):
+class TemplateSerializer(ModelSerializer[Template]):
     class Meta:
         model = Template
         fields = ["id", "name", "description", "content", "thumbnail", "icon"]
 
 
-class TemplateNestedSerializer(serializers.ModelSerializer[Template]):
+class TemplateNestedSerializer(ModelSerializer[Template]):
     class Meta:
         model = Template
         fields = ["id", "name", "description", "thumbnail", "icon"]
 
 
-class ThemeSerializer(serializers.ModelSerializer[Theme]):
+class ThemeSerializer(ModelSerializer[Theme]):
     templates = TemplateNestedSerializer(many=True, read_only=True)
 
     class Meta:
         model = Theme
-        fields = ["id", "name", "description", "thumbnail", "templates"]
+        fields = ["id", "name", "description", "thumbnail", "template_name", "templates"]
