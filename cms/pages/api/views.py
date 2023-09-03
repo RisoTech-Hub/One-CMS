@@ -1,8 +1,8 @@
 from rest_framework.decorators import action
 from rest_framework.mixins import CreateModelMixin, UpdateModelMixin
-from rest_framework.permissions import IsAdminUser
 from rest_framework.viewsets import GenericViewSet
 
+from ...permissions import IsSuperUser
 from ..models import Page as FlatPage
 from .serializers import (
     FlatPageCreateSerializer,
@@ -15,7 +15,7 @@ from .serializers import (
 class FlatPageViewSet(CreateModelMixin, UpdateModelMixin, GenericViewSet):
     serializer_class = FlatPageCreateSerializer
     queryset = FlatPage.objects.all()
-    permission_classes = [IsAdminUser]
+    permission_classes = [IsSuperUser]
 
     def create(self, request, *args, **kwargs):
         self.serializer_class = FlatPageCreateSerializer
