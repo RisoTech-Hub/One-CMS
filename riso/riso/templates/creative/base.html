@@ -1,0 +1,117 @@
+{% load static i18n %}
+
+<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+  <head>
+    <!--begin::Meta-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+      {% endblock title %}
+    </title>
+    <meta name="description"
+          content="{% block description %}{% endblock description %}" />
+    <meta name="keywords" content="{% block keywords %}{% endblock keywords %}" />
+    <link rel="shortcut icon"
+          href="/static/creative/imgs/logo/favicon.png"
+          type="image/x-icon" />
+    <!--end::Meta-->
+    <!--begin::Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,700&display=swap"
+          rel="stylesheet" />
+    <!--end::Fonts-->
+    <!--begin::Stylesheets-->
+    {% block css %}
+      <link rel="stylesheet" href="/static/creative/css/all.min.css" />
+      <link rel="stylesheet" href="/static/creative/css/animate.min.css" />
+      <link rel="stylesheet" href="/static/creative/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="/static/creative/css/meanmenu.min.css" />
+      <link rel="stylesheet" href="/static/creative/css/progressbar.css" />
+      <link rel="stylesheet" href="/static/creative/css/swiper-bundle.min.css" />
+      <link rel="stylesheet" href="/static/creative/css/animate.min.css" />
+      <link rel="stylesheet" href="/static/creative/css/master.css" />
+      <link rel="stylesheet" href="/static/creative/css/style.css" />
+    {% endblock css %}
+    <!--end::Stylesheets-->
+    <!--begin::Javascript-->
+    {% block javascript %}
+      <script src="/static/creative/js/jquery-3.6.1.min.js"></script>
+      <script src="/static/creative/js/bootstrap.bundle.min.js"></script>
+      <script src="/static/creative/js/jquery.counterup.min.js"></script>
+      <script src="/static/creative/js/jquery.meanmenu.min.js"></script>
+      <script src="/static/creative/js/swiper-bundle.min.js"></script>
+      <script src="/static/creative/js/progressbar.js" defer></script>
+      <script src="/static/creative/js/counter.js" defer></script>
+      <script src="/static/creative/js/wow.min.js" defer></script>
+      <script src="/static/creative/js/main.js" defer></script>
+    {% endblock javascript %}
+    <!--end::Javascript-->
+  </head>
+  <body>
+    <!--begin::Root-->
+    <div>
+      <!--begin::Main-->
+      <div>
+        <!--begin::Page-->
+        <!--begin::PreLoader-->
+        <div id="preloader">
+          <div id="loader"></div>
+        </div>
+        <!--end::PreLoader-->
+        <!-- Header area start -->
+        {% include "partials/header.html" %}
+        <!-- Header area end -->
+        {% block content %}
+        {% endblock content %}
+        <!--begin::Footer-->
+        {% include "partials/footer.html" %}
+        <!--end::Footer-->
+        <!--begin::Drawer-->
+        {% include "partials/left_drawer.html" %}
+        <!--end::Drawer-->
+        <!--begin::Modal-->
+        {% block modal %}
+        {% endblock modal %}
+        <!--begin::Modal-->
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-dismissible {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+              {{ message }}
+              <button type="button"
+                      class="btn-close"
+                      data-bs-dismiss="alert"
+                      aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        {% endif %}
+        <!--end::Page-->
+      </div>
+      <!--begin::Scrolltop-->
+      <button id="scroll_top" class="scroll-top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+      <!--end::Scrolltop-->
+      <!--begin::Javascript-->
+      {% block inline_javascript %}
+        {% comment %}
+    Script tags with only code, no src (defer by default). To run
+    with a "defer" so that you run inline code:
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        /* Run whatever you want */
+      });
+    </script>
+        {% endcomment %}
+      {% endblock inline_javascript %}
+      <!--end::Javascript-->
+      <!--end::Main-->
+    </div>
+    <!--end::Root-->
+  </body>
+  <!--end::Body-->
+</html>
