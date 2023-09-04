@@ -1,0 +1,93 @@
+{% load static i18n %}
+
+<footer class="footer__area">
+  <div class="footer__top">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-12">
+          <div class="footer__widgets">
+            <div class="widget__one">
+              <img src="{% static 'creative/imgs/logo/logo.png' %}"
+                   alt="Footer Logo"
+                   class="footer__logo" />
+              <p>
+                Team creative thuê ngoài giàu kinh nghiệm, sẵn sàng đồng hành trong các chiến dịch ngắn và dài hạn
+                trên các nền tảng O2O
+              </p>
+              {#                  <ul class="social-media">#}
+              {#                    <li>#}
+              {#                      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>#}
+              {#                    </li>#}
+              {#                    <li>#}
+              {#                      <a href="#"><i class="fa-brands fa-twitter"></i></a>#}
+              {#                    </li>#}
+              {#                    <li>#}
+              {#                      <a href="#"><i class="fa-brands fa-instagram"></i></a>#}
+              {#                    </li>#}
+              {#                    <li>#}
+              {#                      <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>#}
+              {#                    </li>#}
+              {#                  </ul>#}
+            </div>
+            <div class="footer__widget-two">
+              {#                  <h2 class="footer__widget-title">My Account</h2>#}
+              {#                  <ul class="footer__menu">#}
+              {#                    <li>#}
+              {#                      <a href="#">Terms & Conditions</a>#}
+              {#                    </li>#}
+              {#                    <li>#}
+              {#                      <a href="#">Privacy Policy</a>#}
+              {#                    </li>#}
+              {#                    <li>#}
+              {#                      <a href="#">Affiliates</a>#}
+              {#                    </li>#}
+              {#                    <li>#}
+              {#                      <a href="#">Return Policy</a>#}
+              {#                    </li>#}
+              {#                    <li>#}
+              {#                      <a href="#">Web Development</a>#}
+              {#                    </li>#}
+              {#                  </ul>#}
+            </div>
+            <div class="footer__widget-three">
+              {#                  <h2 class="footer__widget-title">Our Company</h2>#}
+              {#                  <ul class="footer__menu">#}
+              {#                    <li>#}
+              {#                      <a href="#">My Account</a>#}
+              {#                    </li>#}
+              {#                    <li>#}
+              {#                      <a href="#">Order History</a>#}
+              {#                    </li>#}
+              {#                    <li>#}
+              {#                      <a href="#">Returns</a>#}
+              {#                    </li>#}
+              {#                    <li>#}
+              {#                      <a href="#">Wish List</a>#}
+              {#                    </li>#}
+              {#                    <li>#}
+              {#                      <a href="#">Newsletter</a>#}
+              {#                    </li>#}
+              {#                  </ul>#}
+            </div>
+            <div class="footer__widget-four">
+              <h2 class="footer__widget-title">Đăng ký nhận tin</h2>
+              <p>Đăng ký nhận thông tin ưu đãi mới nhất</p>
+              <div class="newsletter">
+                <form action="#">
+                  <input type="text" placeholder="Email nhận tin" />
+                  <button type="submit" class="submit">Đăng ký</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__btm">
+    <p>
+      © 2023 — <a href="#">Hub to Outstanding</a> by <a href="https://risotech.vn/">Riso Tech</a>. All Rights Reserved.
+      Version {{ BUILD_VERSION }}
+    </p>
+  </div>
+</footer>

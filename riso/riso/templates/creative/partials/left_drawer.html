@@ -1,0 +1,195 @@
+{% load static i18n %}
+
+<div class="offcanvas__area">
+  <div class="offcanvas__inner">
+    <div class="offcanvas__top">
+      <img src="{% static 'creative/imgs/logo/logo.png' %}" alt="Logo" />
+      <button id="offcanvas_close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    {#    <div class="offcanvas__search">#}
+    {#      <form action="#">#}
+    {#        <input type="text" placeholder="Search..." name="s"/>#}
+    {#      </form>#}
+    {#    </div>#}
+    {#    <div class="offcanvas__menu">#}
+    {#      <div class="offcanvas-menu">#}
+    {#        <ul>#}
+    {#          <li>#}
+    {#            <a href="#">Home</a>#}
+    {#            <ul>#}
+    {#              <li>#}
+    {#                <a href="#">digital Agency</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">digital Agency dark</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">digital Agency Banner Slider</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">Creative Agency</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">Creative Agency dark</a>#}
+    {#              </li>#}
+    {#            </ul>#}
+    {#          </li>#}
+    {#          <li>#}
+    {#            <a href="#">About</a>#}
+    {#          </li>#}
+    {#          <li>#}
+    {#            <a href="#">Service</a>#}
+    {#            <ul>#}
+    {#              <li>#}
+    {#                <a href="#">Service</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">Service dark</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">Service v.2</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">Service v.2 dark</a>#}
+    {#              </li>#}
+    {#            </ul>#}
+    {#          </li>#}
+    {#          <li>#}
+    {#            <a href="#">portfolio</a>#}
+    {#            <ul>#}
+    {#              <li>#}
+    {#                <a href="#">portfolio</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">portfolio dark</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">portfolio v.2</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">portfolio v.2 dark</a>#}
+    {#              </li>#}
+    {#            </ul>#}
+    {#          </li>#}
+    {#          <li>#}
+    {#            <a href="#">team</a>#}
+    {#            <ul>#}
+    {#              <li>#}
+    {#                <a href="#">team</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">team dark</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">team detail</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">team detail dark</a>#}
+    {#              </li>#}
+    {#            </ul>#}
+    {#          </li>#}
+    {#          <li>#}
+    {#            <a href="#">blog</a>#}
+    {#            <ul>#}
+    {#              <li>#}
+    {#                <a href="#">Blog</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">Blog dark</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">Blog v.2</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">Blog v.2 dark</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">blog details</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">blog details dark</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">blog details v.2</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">blog details v.2 dark</a>#}
+    {#              </li>#}
+    {#            </ul>#}
+    {#          </li>#}
+    {#          <li>#}
+    {#            <a href="#">others</a>#}
+    {#            <ul>#}
+    {#              <li>#}
+    {#                <a href="#">about</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">about dark</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">Contact</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">Contact dark</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">FAQs</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">FAQs dark</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">404</a>#}
+    {#              </li>#}
+    {#              <li>#}
+    {#                <a href="#">404 dark</a>#}
+    {#              </li>#}
+    {#            </ul>#}
+    {#          </li>#}
+    {#          <li>#}
+    {#            <a href="#">Contact</a>#}
+    {#          </li>#}
+    {#        </ul>#}
+    {#      </div>#}
+    {#    </div>#}
+    <div class="offcanvas__map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3918.9723356924856!2d106.6687551!3d10.8134289!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752918978b5a39%3A0xfc689623f37423c0!2zMTFBIEjhu5NuZyBIw6AsIFBoxrDhu51uZyAyLCBUw6JuIELDrG5oLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmggMDA0ODQ!5e0!3m2!1sen!2s!4v1692206299189!5m2!1sen!2s"></iframe>
+    </div>
+    <div class="offcanvas__btm">
+      <ul class="footer__location">
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <span>11A Hồng Hà, Phường 2, Quận Tân Bình
+            <br />
+            Thành phố Hồ Chí Minh, Việt Nam
+          </span>
+        </li>
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:0905232320">+84 905 232320 (Yến Ngân)</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:ngan.nguyen@risotech.vn">Ngan.Nguyen@risotech.vn</a>
+        </li>
+      </ul>
+      <div class="separator"></div>
+      {#      <ul class="social-media">#}
+      {#        <li>#}
+      {#          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>#}
+      {#        </li>#}
+      {#        <li>#}
+      {#          <a href="#"><i class="fa-brands fa-twitter"></i></a>#}
+      {#        </li>#}
+      {#        <li>#}
+      {#          <a href="#"><i class="fa-brands fa-instagram"></i></a>#}
+      {#        </li>#}
+      {#        <li>#}
+      {#          <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>#}
+      {#        </li>#}
+      {#      </ul>#}
+    </div>
+  </div>
+</div>

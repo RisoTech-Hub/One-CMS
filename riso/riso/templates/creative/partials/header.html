@@ -1,0 +1,41 @@
+{% load static i18n %}
+
+<header class="header__area" id="header__sticky">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-12">
+        <div class="header__inner">
+          <div class="header__logo">
+            <a href="#">
+              <img src="{% static 'creative/imgs/logo/logo.png' %}"
+                   alt="Logo"
+                   class="logo" />
+              <img src="{% static 'creative/imgs/logo/logo-3.png' %}"
+                   alt="Logo"
+                   class="sticky-logo" />
+            </a>
+          </div>
+          <div class="header__menu">
+            <div class="main-menu">
+              <ul>
+                {#                    <li class="has-dropdown">#}
+                {#                      <a href="#">Home</a>#}
+                {#                      <ul class="main-dropdown">#}
+                {#                        <li>#}
+                {#                          <a href="#">digital Agency</a>#}
+                {#                        </li>#}
+                {#                      </ul>#}
+                {#                    </li>#}
+              </ul>
+            </div>
+          </div>
+          <div class="header__others">
+            <button class="menu-icon">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
