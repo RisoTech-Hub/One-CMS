@@ -1,94 +1,86 @@
-{% load static i18n meta %}
+{% load i18n static %}
 
 <!DOCTYPE html>
 {% get_current_language as LANGUAGE_CODE %}
-<html lang="{{ LANGUAGE_CODE }}" {% meta_namespaces %}>
+<html lang="{{ LANGUAGE_CODE }}">
   <head>
-    {% include "meta/meta.html" %}
     <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>
-      {% block title %}
-        Riso Package
-      {% endblock title %}
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Behold My Awesome Project!" />
-    <meta name="author" content="Bin Nguyen" />
-    <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}" />
-    {% block css %}
-      <!-- Latest compiled and minified Bootstrap CSS -->
-      <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css"
-            integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer" />
-      <!-- Your stuff: Third-party CSS libraries go here -->
-      <!-- This file stores project-specific CSS -->
-      <link href="{% static 'css/project.css' %}" rel="stylesheet" />
-    {% endblock css %}
-    <!-- Le javascript
-  ================================================== -->
-    {# Placed at the top of the document so pages load faster with defer #}
-    {% block javascript %}
-      <!-- Bootstrap JS -->
-      <script defer
-              src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js"
-              integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g=="
-              crossorigin="anonymous"
-              referrerpolicy="no-referrer"></script>
-      <!-- Your stuff: Third-party javascript libraries go here -->
-      <!-- place project specific Javascript in this file -->
-      <script defer src="{% static 'js/project.js' %}"></script>
-    {% endblock javascript %}
+    <title>Riso Tech</title>
+    <meta name="description" content="Risotech" />
+    <meta name="keywords" content="website, crm, erp, marketing, automation" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="geo.region" content="VN" />
+    <meta name="geo.position" content="14.058324;108.277199" />
+    <meta name="ICBM" content="14.058324, 108.277199" />
+    <meta name="robots" content="INDEX, FOLLOW" />
+    <meta property="og:title" content="Risotech" />
+    <meta property="og:description" content="Risotech" />
+    <meta property="og:image" content="" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://risotech.vn" />
+    <meta http-equiv="Content-Language" content="vi-vn" />
+    <link rel="canonical" href="https://risotech.vn" />
+    <link rel="icon" href="{% static 'risotech/images/fav_icon.ico' %}" />
+    <link rel="stylesheet" href="{% static 'risotech/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'risotech/css/animations.css' %}" />
+    <link rel="stylesheet" href="{% static 'risotech/css/font-awesome.css' %}" />
+    <link rel="stylesheet"
+          href="{% static 'risotech/css/main.css' %}"
+          class="color-switcher-link" />
+    <script src="{% static 'risotech/js/vendor/modernizr-2.6.2.min.js' %}"></script>
+    <script defer src="{% static 'risotech/js/compressed.js' %}"></script>
+    <script defer src="{% static 'risotech/js/main.js' %}"></script>
   </head>
   <body>
-    {% include 'cms/ui-cms-widget.html' %}
-    <div class="mb-1">
-      <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <div class="container-fluid">
-          <button class="navbar-toggler navbar-toggler-right"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarSupportedContent"
-                  aria-controls="navbarSupportedContent"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand" href="{% url 'home' %}">Riso Package</a>
-        </div>
-      </nav>
+    <div class="preloader">
+      <div class="preloader_image"></div>
     </div>
-    <div class="container">
-      {% if messages %}
-        {% for message in messages %}
-          <div class="alert alert-dismissible {% if message.tags %}alert-{{ message.tags }}{% endif %}">
-            {{ message }}
-            <button type="button"
-                    class="btn-close"
-                    data-bs-dismiss="alert"
-                    aria-label="Close"></button>
+    <!-- wrappers for visual page editor and boxed version of template -->
+    <div id="canvas">
+      <div id="box_wrapper">
+        {% block content %}
+        {% endblock content %}
+        <footer class="page_footer corner-footer ds s-pt-30 s-pb-0 s-pb-lg-10 s-pb-xl-50 c-gutter-60 s-parallax">
+          <div class="container">
+            <div class="container">
+              <div class="row">
+                <div class="divider-20 d-none d-xl-block"></div>
+                <div class="col-md-12 mt-4 text-center animate mb-4"
+                     data-animation="fadeInUp">
+                  <img class="margin-negative logo-navbar"
+                       src="{% static 'risotech/images/logo.svg' %}"
+                       alt="" />
+                </div>
+                <div class="col-md-12 text-center animate">
+                  <p>
+                    <!-- djlint:off -->&copy;<!-- djlint:on --> Copyright <span class="copyright_year">2019</span> Riso
+                    Tech Co., Ltd.
+                    Build Version <span class="copyright_year">{{ BUILD_VERSION }}</span>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-        {% endfor %}
-      {% endif %}
-      {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
-      {% endblock content %}
+        </footer>
+        {#        <section class="page_copyright light-copy cs s-py-20 s-py-lg-5 s-parallax copyright">#}
+        {#          <div class="container">#}
+        {#            <div class="row align-items-center">#}
+        {#              <div class="divider-20 d-none d-lg-block"></div>#}
+        {#              <div class="col-md-12 text-center">#}
+        {#                <p>#}
+        {#                  <!-- djlint:off -->&copy;<!-- djlint:on --> Copyright <span class="copyright_year">2019</span> Riso Tech Co., Ltd.#}
+        {#                  Build Version <span class="copyright_year">{{ BUILD_VERSION }}</span>#}
+        {#                </p>#}
+        {#              </div>#}
+        {#              <div class="divider-20 d-none d-lg-block"></div>#}
+        {#            </div>#}
+        {#          </div>#}
+        {#        </section>#}
+      </div>
+      <!-- eof #box_wrapper -->
     </div>
-    <!-- /container -->
-    {% block modal %}
-    {% endblock modal %}
-    {% block inline_javascript %}
-      {% comment %}
-    Script tags with only code, no src (defer by default). To run
-    with a "defer" so that you run inline code:
-    <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        /* Run whatever you want */
-      });
-    </script>
-      {% endcomment %}
-    {% endblock inline_javascript %}
+    <!-- eof #canvas -->
   </body>
 </html>
