@@ -1,0 +1,42 @@
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/typography";
+@import "utils/theme";
+@import "components/button";
+@import "components/title";
+@import "components/widget";
+@import "components/animation";
+@import "components/loading";
+@import "components/menu";
+@import "components/modal";
+@import "layout/header";
+@import "layout/offcanvas";
+@import "layout/hero";
+@import "layout/feature";
+@import "layout/about";
+@import "layout/service";
+@import "layout/counter";
+@import "layout/testimonial";
+@import "layout/process";
+@import "layout/team";
+@import "layout/portfolio";
+@import "layout/hire";
+@import "layout/price";
+@import "layout/brand";
+@import "layout/blog";
+@import "layout/contact";
+@import "layout/footer";
+
+// custom scss
+@import "font";
+
+.package__top {
+  grid-template-columns: 2fr 2.5fr;
+  display: block !important;
+
+  .package__price {
+    .small {
+      font-size: 24px;
+    }
+  }
+}
