@@ -22,5 +22,9 @@
   width: 100%;
   display: none;
 }
+#riso_widget input[type=checkbox] + label:before, #riso_widget input[type=radio] + label:before {
+  content: "";
+  display: none;
+}
 
 /*# sourceMappingURL=custom.css.map */
