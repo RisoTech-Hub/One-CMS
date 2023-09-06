@@ -37,10 +37,10 @@ $(function () {
                                                 <div class="card-body px-0">
                                                     <img src="${template.thumbnail}" alt="${template.name}" class="img-fluid ">
                                                     <h5>${template.name}</h5>
-                                                    <p>${template.description||''}</p>
+                                                    <p>${template.description || ''}</p>
                                                     <div class="text-center">
                                                         <div class="form-check d-inline-block">
-                                                            <input class="form-check-input" name="template" type="radio" value="" id="${template.id}" />
+                                                            <input class="form-check-input" name="template_name" type="radio" value="${theme.template_name}" id="${template.id}" required/>
                                                             <label class="form-check-label" for="${template.id}">
                                                             </label>
                                                         </div>
@@ -64,5 +64,63 @@ $(function () {
         });
 
 
+    });
+
+    $('#form_new_page').on('submit', function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+
+        var object = {};
+        formData.forEach(function (value, key) {
+            object[key] = value;
+        });
+        object['csrf_token'] = csrf_token;
+        object['sites'] = [
+            0
+        ];
+        // var json = JSON.stringify(object);
+
+        $.ajax({
+            url: "/api/pages/",
+            type: "post",
+            headers: {
+                "accept": "application/json",
+                "Content-Type": "application/json",
+                "X-CSRFToken": csrf_token // Include the CSRF token in the request headers
+            },
+            data: JSON.stringify(object),
+            success: function (response) {
+                if (response['result']) {
+
+                    Swal.fire({
+                        title: 'Notice',
+                        html: response['message'],
+                        icon: "success",
+                        type: "success"
+                    }).then(function () {
+                        // window.location.reload();
+
+                    });
+                } else {
+
+                    Swal.fire({
+                        title: 'Notice',
+                        html: response['message'],
+                        icon: "error",
+                        type: "error"
+                    }).then(function () {
+                    });
+                }
+            },
+            error: function (request, status, error) {
+                Swal.fire({
+                    title: 'Notice',
+                    html: error,
+                    icon: "error",
+                    type: "error"
+                }).then(function () {
+                });
+            }
+        });
     });
 });

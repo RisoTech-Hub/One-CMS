@@ -21,6 +21,8 @@
 <script defer src="{% static 'assets/js/components/util.js' %}"></script>
 <script defer src="{% static 'assets/js/components/event-handler.js' %}"></script>
 <script defer src="{% static 'assets/js/components/drawer.js' %}"></script>
+<script defer
+        src="{% static 'assets/js/vendros/plugins/sweetalert2.init.js' %}"></script>
 <!-- This file stores project-specific js -->
 <script>
   var csrf_token = '{{csrf_token}}';
@@ -62,7 +64,7 @@
        data-kt-drawer-activate="true"
        data-kt-drawer-toggle="#kt_drawer_example_basic_button"
        data-kt-drawer-close="#kt_drawer_example_basic_close"
-       data-kt-drawer-width="500px">
+       data-kt-drawer-width="700px">
     <!--begin::Card-->
     <div class="card w-100">
       <!--begin::Card header-->
@@ -106,6 +108,24 @@
       <!--begin::Card body-->
       <div class="card-body hover-scroll-overlay-y text-dark">
         <form id="form_new_page">
+          <div class="mb-10">
+            <label for="form_title" class="required form-label">Title</label>
+            <input id="form_title"
+                   name="title"
+                   type="text"
+                   class="form-control form-control-solid"
+                   placeholder="Enter title"
+                   required />
+          </div>
+          <div class="mb-10">
+            <label for="form_url" class="required form-label">URL</label>
+            <input id="form_url"
+                   name="url"
+                   type="text"
+                   class="form-control form-control-solid"
+                   placeholder="Enter url"
+                   required />
+          </div>
           <div id="theme_list"></div>
         </form>
       </div>
