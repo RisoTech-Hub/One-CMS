@@ -75,9 +75,7 @@ $(function () {
             object[key] = value;
         });
         object['csrf_token'] = csrf_token;
-        object['sites'] = [
-            0
-        ];
+        object['sites'] = [1];
         // var json = JSON.stringify(object);
 
         $.ajax({

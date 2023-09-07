@@ -22,7 +22,9 @@
 <script defer src="{% static 'assets/js/components/event-handler.js' %}"></script>
 <script defer src="{% static 'assets/js/components/drawer.js' %}"></script>
 <script defer
-        src="{% static 'assets/js/vendros/plugins/sweetalert2.init.js' %}"></script>
+        src="{% static 'assets/js/vendors/plugins/global/plugins.bundle.js' %}"></script>
+<link href="{% static 'assets/js/vendors/plugins/global/plugins.bundle.css' %}"
+      rel="stylesheet" />
 <!-- This file stores project-specific js -->
 <script>
   var csrf_token = '{{csrf_token}}';
