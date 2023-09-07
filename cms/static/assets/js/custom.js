@@ -89,7 +89,7 @@ $(function () {
             data: JSON.stringify(object),
             success: function (response) {
                 if (response['result']) {
-
+//TODO: write parser for response
                     Swal.fire({
                         title: 'Notice',
                         html: response['message'],
