@@ -23,18 +23,23 @@
     <meta http-equiv="Content-Language" content="vi-vn" />
     <link rel="canonical" href="https://risotech.vn" />
     <link rel="icon" href="{% static 'risotech/images/fav_icon.ico' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" />
     <link rel="stylesheet" href="{% static 'risotech/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'risotech/css/animations.css' %}" />
     <link rel="stylesheet" href="{% static 'risotech/css/font-awesome.css' %}" />
     <link rel="stylesheet"
           href="{% static 'risotech/css/main.css' %}"
           class="color-switcher-link" />
+    {% swal_message_media True %}
     <script src="{% static 'risotech/js/vendor/modernizr-2.6.2.min.js' %}"></script>
     <script defer src="{% static 'risotech/js/compressed.js' %}"></script>
     <script defer src="{% static 'risotech/js/main.js' %}"></script>
+    {% cms_media False %}
   </head>
   <body>
-    {% include 'cms/ui-cms-widget.html' with sriptJQUERY="False" %}
     <div class="preloader">
       <div class="preloader_image"></div>
     </div>
@@ -43,45 +48,11 @@
       <div id="box_wrapper">
         {% block content %}
         {% endblock content %}
-        <footer class="page_footer corner-footer ds s-pt-30 s-pb-0 s-pb-lg-10 s-pb-xl-50 c-gutter-60 s-parallax">
-          <div class="container">
-            <div class="container">
-              <div class="row">
-                <div class="divider-20 d-none d-xl-block"></div>
-                <div class="col-md-12 mt-4 text-center animate mb-4"
-                     data-animation="fadeInUp">
-                  <img class="margin-negative logo-navbar"
-                       src="{% static 'risotech/images/logo.svg' %}"
-                       alt="" />
-                </div>
-                <div class="col-md-12 text-center animate">
-                  <p>
-                    <!-- djlint:off -->&copy;<!-- djlint:on --> Copyright <span class="copyright_year">2019</span> Riso
-                    Tech Co., Ltd.
-                    Build Version <span class="copyright_year">{{ BUILD_VERSION }}</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
-        {#        <section class="page_copyright light-copy cs s-py-20 s-py-lg-5 s-parallax copyright">#}
-        {#          <div class="container">#}
-        {#            <div class="row align-items-center">#}
-        {#              <div class="divider-20 d-none d-lg-block"></div>#}
-        {#              <div class="col-md-12 text-center">#}
-        {#                <p>#}
-        {#                  <!-- djlint:off -->&copy;<!-- djlint:on --> Copyright <span class="copyright_year">2019</span> Riso Tech Co., Ltd.#}
-        {#                  Build Version <span class="copyright_year">{{ BUILD_VERSION }}</span>#}
-        {#                </p>#}
-        {#              </div>#}
-        {#              <div class="divider-20 d-none d-lg-block"></div>#}
-        {#            </div>#}
-        {#          </div>#}
-        {#        </section>#}
       </div>
       <!-- eof #box_wrapper -->
     </div>
     <!-- eof #canvas -->
+    {% include 'riso-message/messaging.html' %}
+    {% include 'riso-cms/cms-controller.html' %}
   </body>
 </html>

@@ -83,6 +83,7 @@ THIRD_PARTY_APPS = [
     "corsheaders",
     "drf_spectacular",
     "meta",
+    "message",
     "cms",
     "cms.pages",
     "cms.ui",
@@ -187,6 +188,10 @@ TEMPLATES = [
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
                 "riso.users.context_processors.allauth_settings",
+            ],
+            "builtins": [
+                "message.templatetags.swal_message",
+                "cms.templatetags.cms",
             ],
         },
     }
