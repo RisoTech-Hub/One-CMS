@@ -25,4 +25,4 @@ drf-spectacular==0.26.4  # https://github.com/tfranzel/drf-spectacular
 django-meta==2.3.0  # https://django-meta.readthedocs.io/en/latest/installation.html
 
 # Riso Packages
-riso-message==0.1.1  # https://github.com/RisoTech-Hub/one-message
+riso-message==0.1.5  # https://github.com/RisoTech-Hub/one-message
