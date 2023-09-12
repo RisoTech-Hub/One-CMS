@@ -75,7 +75,7 @@ $(function () {
             object[key] = value;
         });
         object['csrf_token'] = csrf_token;
-        object['sites'] = [1];
+        object['sites'] = [0];
         // var json = JSON.stringify(object);
 
         $.ajax({
@@ -100,7 +100,6 @@ $(function () {
 
                     });
                 } else {
-
                     Swal.fire({
                         title: 'Notice',
                         html: response['message'],
@@ -111,13 +110,13 @@ $(function () {
                 }
             },
             error: function (request, status, error) {
-                Swal.fire({
-                    title: 'Notice',
-                    html: error,
-                    icon: "error",
-                    type: "error"
-                }).then(function () {
-                });
+                // Swal.fire({
+                //     title: 'Notice',
+                //     html: error,
+                //     icon: "error",
+                //     type: "error"
+                // }).then(function () {
+                // });
             }
         });
     });
