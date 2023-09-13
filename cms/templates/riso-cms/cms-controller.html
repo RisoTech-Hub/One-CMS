@@ -82,55 +82,111 @@
         <!--end::Card header-->
         <!--begin::Card body-->
         <div class="card-body hover-scroll-overlay-y text-dark">
-          <form id="form_new_page">
-            <div class="mb-10">
-              <label for="form_title" class="required form-label">Title</label>
-              <input id="form_title"
-                     name="title"
-                     type="text"
-                     class="form-control form-control-solid"
-                     placeholder="Enter title"
-                     required />
-            </div>
-            <div class="mb-10">
-              <label for="form_url" class="required form-label">URL</label>
-              <input id="form_url"
-                     name="url"
-                     type="text"
-                     class="form-control form-control-solid"
-                     placeholder="Enter url"
-                     required />
-            </div>
-            <div id="theme_list"></div>
-          </form>
+          <div id="theme_list"></div>
         </div>
         <div class="card-footer">
-          <button class="btn btn-sm btn-primary" form="form_new_page">Confirm</button>
+          {#          <button class="btn btn-sm btn-primary" form="form_new_page">Confirm</button>#}
         </div>
         <!--end::Card body-->
       </div>
       <!--end::Card-->
     </div>
     <!--end::Drawer-->
-    <div class="modal fade" tabindex="-1" id="kt_modal_1">
+    <div class="modal fade" tabindex="-1" id="modal_new_page">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
-            <!--begin::Close-->
-            <div class="btn btn-icon btn-sm btn-active-light-primary ms-2"
-                 data-bs-dismiss="modal"
-                 aria-label="Close">
-              <span class="svg-icon svg-icon-2x"></span>
+          <form id="form_new_page">
+            <div class="modal-body">
+              <div class="row mb-4">
+                <div class="col-2">
+                  <div class="symbol symbol-100px symbol-circle"
+                       data-bs-toggle="tooltip"
+                       aria-label="Michael Eberon"
+                       data-bs-original-title="Michael Eberon"
+                       data-kt-initialized="1">
+                    <img alt="Pic"
+                         src="https://preview.keenthemes.com/metronic8/demo1/assets/media/avatars/300-11.jpg" />
+                  </div>
+                </div>
+                <div class="col-10">
+                  <p>Title</p>
+                  <p>Decs</p>
+                  <div class="flex-fill d-flex gap-2">
+                    <div class="align-self-center">
+                      <label for="form_title" class="required form-label">Title</label>
+                      <input id="form_title"
+                             name="title"
+                             type="text"
+                             class="form-control form-control-solid"
+                             placeholder="Enter title"
+                             required />
+                    </div>
+                    <div class="align-self-center">
+                      <label for="form_url" class="required form-label">URL</label>
+                      <input id="form_url"
+                             name="url"
+                             type="text"
+                             class="form-control form-control-solid"
+                             placeholder="Enter url"
+                             required />
+                    </div>
+                    <div class="align-self-center">
+                      <button class="btn btn-sm btn-primary" type="submit">
+                        <span id="span_quick">Quick</span> Add
+                      </button>
+                    </div>
+                    <div class="align-self-center">
+                      <a href="javascript:void(0);"
+                         class="link-primary"
+                         id="modal_btn_advance">Advance</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="div_advance" class="mb-4" style="display: none;">
+                <div class="row">
+                  <div class="col-4">
+                    <label for="form_qq" class="form-label">Q</label>
+                    <input id="form_qq"
+                           name="qq"
+                           type="text"
+                           class="form-control form-control-solid"
+                           placeholder="Enter qq" />
+                  </div>
+                  <div class="col-4">
+                    <label for="form_qq2" class="form-label">Q2</label>
+                    <input id="form_qq2"
+                           name="qq2"
+                           type="text"
+                           class="form-control form-control-solid"
+                           placeholder="Enter qq" />
+                  </div>
+                  <div class="col-4">
+                    <label for="form_qq3" class="form-label">Q3</label>
+                    <input id="form_qq3"
+                           name="qq3"
+                           type="text"
+                           class="form-control form-control-solid"
+                           placeholder="Enter qq" />
+                  </div>
+                </div>
+              </div>
+              <div id="div_image">
+                <img alt=""
+                     src="https://preview.keenthemes.com/metronic8/demo1/assets/media/stock/600x600/img-65.jpg"
+                     class="w-100" />
+                <img alt=""
+                     src="https://preview.keenthemes.com/metronic8/demo1/assets/media/stock/600x600/img-65.jpg"
+                     class="w-100" />
+                <img alt=""
+                     src="https://preview.keenthemes.com/metronic8/demo1/assets/media/stock/600x600/img-65.jpg"
+                     class="w-100" />
+              </div>
             </div>
-            <!--end::Close-->
-          </div>
-          <div class="modal-body">
-            <p>Modal body text goes here.</p>
-          </div>
+          </form>
           <div class="modal-footer">
-            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            {#            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>#}
+            {#            <button type="button" class="btn btn-primary">Save changes</button>#}
           </div>
         </div>
       </div>

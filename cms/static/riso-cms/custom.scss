@@ -36,4 +36,15 @@
       display: none;
     }
   }
+
+  #modal_new_page{
+    .modal-dialog{
+      max-width: 80%;
+    }
+
+    #div_image{
+      max-height: 500px;
+      overflow: auto;
+    }
+  }
 }

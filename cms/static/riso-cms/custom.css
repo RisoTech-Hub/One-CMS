@@ -26,5 +26,12 @@
   content: "";
   display: none;
 }
+#riso_widget #modal_new_page .modal-dialog {
+  max-width: 80%;
+}
+#riso_widget #modal_new_page #div_image {
+  max-height: 500px;
+  overflow: auto;
+}
 
 /*# sourceMappingURL=custom.css.map */

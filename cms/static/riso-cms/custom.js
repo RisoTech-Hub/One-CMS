@@ -34,17 +34,11 @@ $(function () {
                                 console.log('-----template', template)
                                 html += `<div class="col-6">
                                             <div class="card">
-                                                <div class="card-body px-0">
+                                                <div class="card-body px-0 item-theme">
                                                     <img src="${template.thumbnail}" alt="${template.name}" class="img-fluid ">
                                                     <h5>${template.name}</h5>
                                                     <p>${template.description || ''}</p>
-                                                    <div class="text-center">
-                                                        <div class="form-check d-inline-block">
-                                                            <input class="form-check-input" name="template_name" type="radio" value="${theme.template_name}" id="${template.id}" required/>
-                                                            <label class="form-check-label" for="${template.id}">
-                                                            </label>
-                                                        </div>
-                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -120,4 +114,20 @@ $(function () {
             }
         });
     });
+
+    $(document).on('click', '.item-theme', function () {
+        $('#modal_new_page').modal('show');
+    });
+
+    $('#modal_btn_advance').on('click', function () {
+        const isShowed = !$('#div_advance').is(":hidden");
+        console.log('isShowed', isShowed)
+        if(isShowed){
+            $('#div_advance').hide(300);
+            $('#div_advance input').attr('required', false);
+        }else{
+            $('#div_advance').show(300);
+            $('#div_advance input').attr('required', true);
+        }
+    })
 });
