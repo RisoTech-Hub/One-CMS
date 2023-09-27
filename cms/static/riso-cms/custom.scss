@@ -1,5 +1,7 @@
 #riso_widget {
-  font-family: 'Roboto', sans-serif;
+  @import 'normalize';
+
+  font-family: 'Inter', sans-serif;
 
   * {
     letter-spacing: normal !important;
