@@ -84,6 +84,7 @@ THIRD_PARTY_APPS = [
     "drf_spectacular",
     "meta",
     "message",
+    "sdk",
     "cms",
     "cms.pages",
     "cms.ui",

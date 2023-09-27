@@ -10,7 +10,7 @@ flower==2.0.0  # https://github.com/mher/flower
 
 # Django
 # ------------------------------------------------------------------------------
-django==4.2.4  # pyup: < 5.0  # https://www.djangoproject.com/
+django>=4.2.5,<=5  # pyup: < 5.0  # https://www.djangoproject.com/
 django-environ==0.10.0  # https://github.com/joke2k/django-environ
 django-model-utils==4.3.1  # https://github.com/jazzband/django-model-utils
 django-allauth==0.54.0  # https://github.com/pennersr/django-allauth
@@ -26,3 +26,4 @@ django-meta==2.3.0  # https://django-meta.readthedocs.io/en/latest/installation.
 
 # Riso Packages
 riso-message==0.1.5  # https://github.com/RisoTech-Hub/one-message
+riso-sdk==0.1.0  # https://github.com/RisoTech-Hub/one-sdk
