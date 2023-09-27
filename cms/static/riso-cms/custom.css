@@ -6,6 +6,9 @@
   z-index: 1000;
   max-width: 120px;
 }
+#riso_widget .widget-bottom {
+  z-index: 1000;
+}
 #riso_widget #riso_toggle {
   background-color: #00B2FF;
   opacity: 0.6;

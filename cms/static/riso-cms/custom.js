@@ -130,4 +130,8 @@ $(function () {
             $('#div_advance input').attr('required', true);
         }
     })
+
+    $('#cms_btn_edit').on('click', function () {
+        $('.widget-bottom').show(200)
+    })
 });
