@@ -122,10 +122,10 @@ $(function () {
     $('#modal_btn_advance').on('click', function () {
         const isShowed = !$('#div_advance').is(":hidden");
         console.log('isShowed', isShowed)
-        if(isShowed){
+        if (isShowed) {
             $('#div_advance').hide(300);
             $('#div_advance input').attr('required', false);
-        }else{
+        } else {
             $('#div_advance').show(300);
             $('#div_advance input').attr('required', true);
         }
@@ -133,5 +133,9 @@ $(function () {
 
     $('#cms_btn_edit').on('click', function () {
         $('.widget-bottom').show(200)
+    })
+
+    $('#cms_btn_advance_drawer').on('click', function () {
+        $('#modal_advance_seo').modal('show')
     })
 });
